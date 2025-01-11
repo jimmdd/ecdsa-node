@@ -67,11 +67,26 @@ let prime256v1 = new CurveFp(
     "P-256"
 );
 
+// Define the P-192 curve
+const secp192r1 = new CurveFp(
+    BigInt(-3), // A
+    BigInt('0x64210519E59C80E70FA7E9AB72243049FEB8DEECC146B9B1'), // B
+    BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFF'), // P
+    BigInt('0xFFFFFFFFFFFFFFFFFFFFFFFF99DEF836146BC9B1B4D22831'), // N
+    BigInt('0x188DA80EB03090F67CBF20EB43A18800F4FF0AFD82FF1012'), // Gx
+    BigInt('0x07192B95FFC8DA78631011ED6B24CDD573F977A11E794811'), // Gy
+    'secp192r1', // Name
+    [1, 2, 840, 10045, 3, 1, 1], // OID
+    'P-192' // NistName
+);
+
+
 let p256 = prime256v1;
 
 let supportedCurves = [
     secp256k1,
     prime256v1,
+    secp192r1
 ];
 
 let curvesByOid = {};
